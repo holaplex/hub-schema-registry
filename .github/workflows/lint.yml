@@ -1,11 +1,8 @@
 name: "lint protobuf"
-#on: pull_request
-on:
-  push:
-    branches:
-      - mpw/ci-setup
+on: pull_request
+
 jobs:
-  pr-check:
+  proto-lint:
     runs-on: ubuntu-latest
     steps:
       - name: checkout source
