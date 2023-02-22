@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package customer.proto;
+
+message CustomerEventKey {
+  string id = 1;
+}
+
+message Customer {
+  string project_id = 1;
+}
+
+message CustomerEvents{
+  oneof event {
+    Customer created = 2;
+  }
+}

@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+
+package drops.proto;
+
+message DropEventKey {
+  string id = 1;
+  string user_id = 2;
+}
+
+message Transaction {
+  bytes serialized_message = 1;
+  string signed_message_signature = 2;
+  string project_id = 5;
+  
+}
+
+message DropEvents{
+  oneof event {
+    Transaction create_master_edition = 2;
+    Transaction mint_edition = 3;
+  }
+}

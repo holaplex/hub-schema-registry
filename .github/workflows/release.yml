@@ -1,0 +1,24 @@
+name: Release Image
+on:
+  push:
+    branches:
+      - main
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    container: mpwsh/git-ruby-runner:latest
+    environment: release
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Publish schemas
+        run: |
+          for x in $(find . -maxdepth 1 -iname '*.proto' -printf '%f\n');do \
+            subject=$(echo $x | cut -d. -f1); \
+            curl -s -i -X POST "https://schemas.holaplex.tools/subjects/$subject/versions" \
+            -H "Content-Type: application/vnd.schemaregistry.v1+json" \
+            -H "Authorization:${{ secrets.SCHEMA_REGISTRY_TOKEN}}" \
+            -d "$(ruby -e 'require "json";puts JSON::dump({schemaType:"PROTOBUF",schema:File::read(ARGV[0])})' "$x")"; \
+          done
+          
