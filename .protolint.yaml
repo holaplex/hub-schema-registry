@@ -52,7 +52,7 @@ lint:
     # INDENT rule option.
     indent:
       # Available styles are 4(4-spaces), 2(2-spaces) or tab.
-      style: 4
+      style: 2
       # Specifies if it should stop considering and inserting new lines at the appropriate positions
       # when the inner elements are on the same line. Default is false.
       not_insert_newline: true
@@ -97,15 +97,6 @@ lint:
         - With
         - For
         - Of
-      # The specific keywords including prepositions to ignore. E.g. EndOfSupport is a term you would like to use, and skip checking.
-      excludes:
-        - EndOfSupport
-        -
-    #  RPC_NAMES_CASE rule option.
-    rpc_names_case:
-      # The specific convention the name should conforms to.
-      ## Available conventions are "lower_camel_case", "upper_snake_case", or "lower_snake_case".
-      convention: upper_snake_case
 
     # MESSAGES_HAVE_COMMENT rule option.
     messages_have_comment:
