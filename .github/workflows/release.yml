@@ -1,0 +1,23 @@
+name: Release Image
+on:
+  push:
+    branches:
+      - "mpw/ci-setup"
+jobs:
+  release:
+    runs-on: self-hosted
+    environment: release
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      - name: Publish schemas
+        run: |
+          for x in $(find . -iname '*.proto' -printf '%f\n');do
+            subject=$(echo $x | cut -d. -f1)
+            curl -X POST "https://schemas.holaplex.tools/subjects/$subject/versions" \
+            -H "Content-Type: application/vnd.schemaregistry.v1+json" \
+            -d "`ruby -e 'require "json";puts JSON::dump({schemaType:"PROTOBUF",schema:File::read("./$x")})'`" \
+            -vvv
+          done
+          
