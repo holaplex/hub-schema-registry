@@ -18,7 +18,7 @@ jobs:
             subject=$(echo $x | cut -d. -f1)
             curl -s -i -X POST "https://schemas.holaplex.tools/subjects/$subject/versions" \
             -H "Content-Type: application/vnd.schemaregistry.v1+json" \
-            -H "Authorization:${{ secrets.SCHEMA_REGISTRY_TOKEN}}"
+            -H "Authorization:${{ secrets.SCHEMA_REGISTRY_TOKEN}}" \
             -d "`ruby -e 'require "json";puts JSON::dump({schemaType:"PROTOBUF",schema:File::read(ARGV[0])})' "$x"`" \
           done
           
