@@ -1,4 +1,4 @@
-name: Release Image
+name: Publish to schema registry
 on:
   push:
     branches:
