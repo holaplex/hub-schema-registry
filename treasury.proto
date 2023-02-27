@@ -1,6 +1,4 @@
 syntax = "proto3";
-
-
 package treasury.proto;
 
 message TreasuryEventKey {
@@ -8,7 +6,7 @@ message TreasuryEventKey {
 }
 
 message TreasuryEvents {
-    enum TRANSACTION_STATUS {
+  enum TRANSACTION_STATUS{
     SUBMITTED = 0;
     QUEUED = 1;
     PENDING_AUTHORIZATION = 2;
@@ -25,7 +23,8 @@ message TreasuryEvents {
     BLOCKED = 13;
     FAILED = 14;
     PENDING = 15;
-   }
+  }
+  
   oneof event {
     TRANSACTION_STATUS master_edition = 2;
     TRANSACTION_STATUS mint_edition =3;
