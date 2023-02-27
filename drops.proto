@@ -10,7 +10,7 @@ message DropEventKey {
 
 message Transaction {
   bytes serialized_message = 1;
-  string signed_message_signature = 2;
+  repeated string signed_message_signatures = 2;
   string project_id = 5;
   
 }
