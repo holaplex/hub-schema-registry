@@ -6,27 +6,51 @@ message TreasuryEventKey {
 }
 
 message TreasuryEvents {
-  enum TRANSACTION_STATUS{
-    SUBMITTED = 0;
-    QUEUED = 1;
-    PENDING_AUTHORIZATION = 2;
-    PENDING_SIGNATURE = 3;
-    BROADCASTING = 4;
-    PENDING_3RD_PARTY_MANUAL_APPROVAL = 5;
-    PENDING_3RD_PARTY = 6;
-    CONFIRMING = 7;
-    PARTIALLY_COMPLETED = 8;
-    PENDING_AML_SCREENING = 9;
-    COMPLETED = 10;
-    CANCELLED = 11;
-    REJECTED = 12;
-    BLOCKED = 13;
-    FAILED = 14;
-    PENDING = 15;
+  enum TransactionStatus {
+    TRANSACTION_STATUS_SUBMITTED_UNSPECIFIED = 0;
+    TRANSACTION_STATUS_QUEUED = 1;
+    TRANSACTION_STATUS_PENDING_AUTHORIZATION = 2;
+    TRANSACTION_STATUS_PENDING_SIGNATURE = 3;
+    TRANSACTION_STATUS_BROADCASTING = 4;
+    TRANSACTION_STATUS_PENDING_3RD_PARTY_MANUAL_APPROVAL = 5;
+    TRANSACTION_STATUS_PENDING_3RD_PARTY = 6;
+    TRANSACTION_STATUS_CONFIRMING = 7;
+    TRANSACTION_STATUS_PARTIALLY_COMPLETED = 8;
+    TRANSACTION_STATUS_PENDING_AML_SCREENING = 9;
+    TRANSACTION_STATUS_COMPLETED = 10;
+    TRANSACTION_STATUS_CANCELLED = 11;
+    TRANSACTION_STATUS_REJECTED = 12;
+    TRANSACTION_STATUS_BLOCKED = 13;
+    TRANSACTION_STATUS_FAILED = 14;
+    TRANSACTION_STATUS_PENDING = 15;
   }
   
+  message CustomerTreasury {
+    string project_id = 2;
+    string customer_id = 3;
+  }
+
+  message CustomerWallet {
+    string project_id = 2;
+    string customer_id = 3;
+  }
+
+  message DropCreated {
+    string project_id = 2;
+    TransactionStatus status = 3;
+  }
+
+  message DropMinted {
+    string project_id = 2;
+    string drop_id = 3;
+    TransactionStatus status = 4;
+  }
+
+
   oneof event {
-    TRANSACTION_STATUS master_edition = 2;
-    TRANSACTION_STATUS mint_edition =3;
+    CustomerTreasury customer_treasury_created = 4;
+    CustomerWallet customer_wallet_created = 5;
+    DropCreated drop_created = 6;
+    DropMinted drop_minted = 7;
   }
 }
