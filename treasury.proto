@@ -35,6 +35,10 @@ message TreasuryEvents {
     string customer_id = 3;
   }
 
+  message ProjectWallet {
+    string project_id = 2;
+  }
+
   message DropCreated {
     string project_id = 2;
     TransactionStatus status = 3;
@@ -52,5 +56,6 @@ message TreasuryEvents {
     CustomerWallet customer_wallet_created = 5;
     DropCreated drop_created = 6;
     DropMinted drop_minted = 7;
+    ProjectWallet project_wallet_created = 8;
   }
 }
