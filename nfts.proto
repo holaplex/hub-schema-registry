@@ -1,9 +1,9 @@
 syntax = "proto3";
 
 
-package drops.proto;
+package nfts.proto;
 
-message DropEventKey {
+message NftEventKey {
   string id = 1;
   string user_id = 2;
 }
@@ -24,7 +24,7 @@ message MintTransaction {
   string drop_id = 3;
 }
 
-message DropEvents{
+message NftEvents{
   oneof event {
     DropTransaction create_drop = 4;
     MintTransaction mint_drop = 5;
