@@ -8,9 +8,17 @@ message NftEventKey {
   string user_id = 2;
 }
 
+enum Blockchain {
+  BLOCKCHAIN_UNSPECIFIED = 0;
+  BLOCKCHAIN_SOLANA = 1;
+  BLOCKCHAIN_POLYGON = 2;
+  BLOCKCHAIN_ETHEREUM = 3;
+}
+
 message Transaction {
   bytes serialized_message = 1;
   repeated string signed_message_signatures = 2;
+  Blockchain blockchain = 3;
 }
 
 message DropTransaction {
