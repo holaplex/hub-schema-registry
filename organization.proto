@@ -1,9 +1,6 @@
 syntax = "proto3";
 
-
 package organization.proto;
-
-// import "google/protobuf/timestamp.proto";
 
 message OrganizationEventKey {
   string id = 1;
@@ -16,8 +13,6 @@ message Project {
   string organization_id = 3;
   string created_at = 4;
   string deactivated_at = 5;
-  // google.protobuf.Timestamp created_at = 4;
-  // google.protobuf.Timestamp deactivated_at = 5;
 }
 
 message Organization {
@@ -25,14 +20,18 @@ message Organization {
   string name = 2;
   string created_at = 3;
   string deactivated_at = 4;
-  // google.protobuf.Timestamp created_at = 3;
-  // google.protobuf.Timestamp deactivated_at = 4;
 }
+
+message Member {
+  string organization_id = 2;
+}
+
 
 message OrganizationEvents {
   oneof event {
     Project project_created = 2;
     Project project_deactivated = 3;
     Organization organization_created = 4;
+    Member member_added = 5;
   }
 }
