@@ -26,6 +26,11 @@ message DropTransaction {
   string project_id = 2;
 }
 
+message CollectionTransaction {
+  Transaction transaction = 1;
+  string project_id = 2;
+}
+
 message MintTransaction {
   Transaction transaction = 1;
   string project_id = 2;
@@ -36,5 +41,6 @@ message NftEvents{
   oneof event {
     DropTransaction create_drop = 4;
     MintTransaction mint_drop = 5;
+    CollectionTransaction create_collection_nft = 6;
   }
 }
