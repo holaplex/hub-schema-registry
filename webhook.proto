@@ -7,7 +7,7 @@ message WebhookEventKey {
 }
 
 message Webhook {
-  string orgnanization_id = 1;
+  string organization_id = 1;
   string endpoint_id = 2;
 }
 
