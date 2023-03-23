@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package webhook.proto;
+
+message WebhookEventKey {
+  string id = 1;
+}
+
+message Webhook {
+  string orgnanization_id = 1;
+  string endpoint_id = 2;
+}
+
+message WebhookEvents {
+  oneof event {
+    Webhook created = 2;
+  }
+}
