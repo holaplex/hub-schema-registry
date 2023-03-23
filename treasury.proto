@@ -3,6 +3,8 @@ package treasury.proto;
 
 message TreasuryEventKey {
   string id = 1;
+  // the user who triggered the event
+  string user_id = 2;
 }
 
 message TreasuryEvents {
