@@ -4,6 +4,7 @@ package organization.proto;
 
 message OrganizationEventKey {
   string id = 1;
+  // the user who triggered the event
   string user_id = 2;
 }
 
@@ -33,5 +34,7 @@ message OrganizationEvents {
     Project project_deactivated = 3;
     Organization organization_created = 4;
     Member member_added = 5;
+    Member member_deactivated = 6;
+    Member member_reactivated = 7;
   }
 }

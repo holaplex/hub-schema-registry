@@ -4,6 +4,8 @@ package webhook.proto;
 
 message WebhookEventKey {
   string id = 1;
+  // the user who triggered the event
+  string user_id = 2;
 }
 
 message Webhook {
@@ -14,5 +16,6 @@ message Webhook {
 message WebhookEvents {
   oneof event {
     Webhook created = 2;
+    Webhook deleted = 3;
   }
 }

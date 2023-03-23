@@ -5,6 +5,7 @@ package nfts.proto;
 
 message NftEventKey {
   string id = 1;
+  // the user that triggered the event
   string user_id = 2;
 }
 
