@@ -66,6 +66,12 @@ message TreasuryEvents {
     string tx_signature = 5;
   }
 
+  message DropUpdated {
+    string project_id = 2;
+    string drop_id = 3;
+    TransactionStatus status = 4;
+    string tx_signature = 5;
+  }
 
   oneof event {
     CustomerTreasury customer_treasury_created = 4;
@@ -73,5 +79,6 @@ message TreasuryEvents {
     DropCreated drop_created = 6;
     DropMinted drop_minted = 7;
     ProjectWallet project_wallet_created = 8;
+    DropUpdated drop_updated = 9;
   }
 }
