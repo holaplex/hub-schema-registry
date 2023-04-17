@@ -40,10 +40,19 @@ message UpdateMetadataTransaction {
   string drop_id = 3;
 }
 
+message TransferMintTransaction {
+  optional Transaction transaction = 1;
+  string address = 2;
+  string sender = 3;
+  string recipient = 4;
+  string project_id = 5;
+}
+
 message NftEvents{
   oneof event {
     DropTransaction create_drop = 4;
     MintTransaction mint_drop = 5;
     UpdateMetadataTransaction update_metadata = 6;
+    TransferMintTransaction transfer_mint = 7;
   }
 }

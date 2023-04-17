@@ -73,6 +73,14 @@ message TreasuryEvents {
     string tx_signature = 5;
   }
 
+  message MintTransfered {
+    string sender = 1;
+    string recipient = 2;
+    string mint_address = 3;
+    string tx_signature = 4;
+    string project_id =5;
+  }
+
   oneof event {
     CustomerTreasury customer_treasury_created = 4;
     CustomerWallet customer_wallet_created = 5;
@@ -80,5 +88,6 @@ message TreasuryEvents {
     DropMinted drop_minted = 7;
     ProjectWallet project_wallet_created = 8;
     DropUpdated drop_updated = 9;
+    MintTransfered mint_transfered = 10;
   }
 }
