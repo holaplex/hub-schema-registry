@@ -41,7 +41,7 @@ message UpdateMetadataTransaction {
 }
 
 message TransferMintTransaction {
-  optional Transaction transaction = 1;
+  Transaction transaction = 1;
   string address = 2;
   string sender = 3;
   string recipient = 4;
