@@ -1,0 +1,37 @@
+syntax = "proto3";
+
+package credits.proto;
+
+message CreditsEventKey {
+  string id = 1;
+  string user_id = 2;
+}
+
+enum Code {
+  UNSPECIFIED = 0;
+  CREDIT_DEPOSIT = 1;
+  CREATE_DROP = 2;
+  MINT_EDITION = 3;
+  TRANSFER_ASSET = 4;
+  RETRY_MINT = 5;
+
+}
+
+enum Blockchain {
+  BLOCKCHAIN_UNSPECIFIED = 0;
+  BLOCKCHAIN_SOLANA = 1;
+  BLOCKCHAIN_POLYGON = 2;
+  BLOCKCHAIN_ETHEREUM = 3;
+}
+
+message Credits {
+  int64 credits = 1;
+  Code code = 2;
+  Blockchain blockchain = 3;
+}
+
+message CreditsEvent {
+  oneof event {
+    Credits credits_updated = 1;
+  }
+}
