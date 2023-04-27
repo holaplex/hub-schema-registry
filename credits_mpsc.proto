@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package credits.mpsc;
+package credits_mpsc.proto;
 
 import "credits.proto";
 
