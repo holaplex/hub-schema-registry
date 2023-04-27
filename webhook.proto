@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package webhook.proto;
+package webhook;
 
 message WebhookEventKey {
   string id = 1;

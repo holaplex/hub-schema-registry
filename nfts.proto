@@ -1,7 +1,7 @@
 syntax = "proto3";
 
 
-package nfts.proto;
+package nfts;
 
 message NftEventKey {
   string id = 1;

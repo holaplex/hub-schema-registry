@@ -1,5 +1,6 @@
 syntax = "proto3";
-package treasury.proto;
+
+package treasury;
 
 message TreasuryEventKey {
   string id = 1;

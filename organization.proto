@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package organization.proto;
+package organization;
 
 message OrganizationEventKey {
   string id = 1;
