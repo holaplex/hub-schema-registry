@@ -1,4 +1,5 @@
 syntax = "proto3";
+
 package treasury.proto;
 
 message TreasuryEventKey {

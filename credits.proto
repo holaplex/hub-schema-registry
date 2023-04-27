@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package credits.proto;
+package credits;
 
 message CreditsEventKey {
   string id = 1;
@@ -9,11 +9,10 @@ message CreditsEventKey {
 
 enum Action {
   UNSPECIFIED = 0;
-  CREDIT_DEPOSIT = 1;
-  CREATE_DROP = 2;
-  MINT_EDITION = 3;
-  TRANSFER_ASSET = 4;
-  RETRY_MINT = 5;
+  CREATE_DROP = 1;
+  MINT_EDITION = 2;
+  TRANSFER_ASSET = 3;
+  RETRY_MINT = 4;
 
 }
 
@@ -32,6 +31,6 @@ message Credits {
 
 message CreditsEvent {
   oneof event {
-    Credits credits_updated = 1;
+    Credits credits_deducted = 1;
   }
 }
