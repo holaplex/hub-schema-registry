@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package credits.proto;
+package credits;
 
 message CreditsEventKey {
   string id = 1;
