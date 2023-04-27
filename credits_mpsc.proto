@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package credits_mpsc.proto;
+
+import "credits.proto";
+
+message CreditsMpscEvent {
+  oneof event {
+    credits.proto.Credits update_credits = 1;
+  }
+}
