@@ -11,4 +11,4 @@ jobs:
       - name: run protolint
         uses: plexsystems/protolint-action@v0.4.0
         with:
-          configDirectory: protos
+          configDirectory: .
