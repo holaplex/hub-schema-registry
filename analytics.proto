@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+
+package analytics.proto;
+
+message Datapoint {
+  google.protobuf.Timestamp ts = 1;
+  string series = 2;
+  map<string, string> tags = 3;
+  map<string, Value> values = 4;
+
+  message Value {
+    oneof value {
+      uint64 unsigned = 1;
+      sint32 signed = 2;
+      string string = 3;
+    }
+  }
+}
