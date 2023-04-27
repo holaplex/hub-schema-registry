@@ -62,5 +62,5 @@ def upload_schema(file_path):
 
     response.raise_for_status()
 
-for file in Path(".").glob("*.proto"):
+for file in Path("protos").glob("*.proto"):
     upload_schema(file)
