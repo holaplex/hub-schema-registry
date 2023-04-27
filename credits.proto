@@ -7,7 +7,7 @@ message CreditsEventKey {
   string user_id = 2;
 }
 
-enum Code {
+enum Action {
   UNSPECIFIED = 0;
   CREDIT_DEPOSIT = 1;
   CREATE_DROP = 2;
@@ -26,8 +26,8 @@ enum Blockchain {
 
 message Credits {
   int64 credits = 1;
-  Code code = 2;
   Blockchain blockchain = 3;
+  Action action = 4;
 }
 
 message CreditsEvent {
