@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package customer;
+package customer.proto;
 
 message CustomerEventKey {
   string id = 1;
