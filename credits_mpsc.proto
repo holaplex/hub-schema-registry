@@ -6,6 +6,7 @@ import "credits.proto";
 
 message CreditsMpscEvent {
   oneof event {
-    credits.Credits deduct_credits = 1;
+    credits.Credits pending_deduction = 1;
+    credits.Credits confirm_deduction = 2;
   }
 }
