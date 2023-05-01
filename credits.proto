@@ -3,6 +3,7 @@ syntax = "proto3";
 package credits;
 
 message CreditsEventKey {
+  //credits deduction id
   string id = 1;
   string user_id = 2;
 }
@@ -27,6 +28,7 @@ message Credits {
   int64 credits = 1;
   Blockchain blockchain = 3;
   Action action = 4;
+  string organization = 5;
 }
 
 message CreditsEvent {
