@@ -91,5 +91,7 @@ message TreasuryEvents {
     ProjectWallet project_wallet_created = 8;
     DropUpdated drop_updated = 9;
     MintTransfered mint_transfered = 10;
+    DropMinted mint_retried = 11;
+    DropCreated drop_retried = 12;
   }
 }

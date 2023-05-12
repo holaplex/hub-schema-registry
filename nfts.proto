@@ -55,5 +55,7 @@ message NftEvents{
     MintTransaction mint_drop = 5;
     UpdateMetadataTransaction update_metadata = 6;
     TransferMintTransaction transfer_mint = 7;
+    MintTransaction retry_mint = 8;
+    DropTransaction retry_drop = 9;
   }
 }

@@ -15,6 +15,7 @@ enum Action {
   TRANSFER_ASSET = 3;
   RETRY_MINT = 4;
   CREATE_WALLET = 5;
+  RETRY_DROP = 6;
 
 }
 
