@@ -64,7 +64,7 @@ message CreateEditionTransaction {
   string receiver = 5;
   int64 amount = 6;
   string fee_receiver = 8;
-  int32 fee_numberator = 7;
+  int32 fee_numerator = 7;
 }
 
 message MintEditionTransaction {
