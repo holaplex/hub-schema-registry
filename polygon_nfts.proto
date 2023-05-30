@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+
+package nfts.proto;
+
+message PolygonNftEventKey {
+  string id = 1;
+  // the user that triggered the event
+  string user_id = 2;
+}
+
+message UnsignedEditionTransaction {
+  string transaction_hash = 1;
+  string project_id = 2;
+}
+
+message EditionCreated {
+  string transaction_signature = 1;
+  string project_id = 2;
+}
+
+message PolygonNftEvents {
+  oneof event {
+    UnsignedEditionTransaction sign_edition_transaction = 1;
+    EditionCreated edition_created = 2;
+  }
+}
