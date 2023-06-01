@@ -1,6 +1,5 @@
 syntax = "proto3";
 
-
 package nfts.proto;
 
 message NftEventKey {
@@ -102,12 +101,6 @@ message MetaplexMasterEditionTransaction {
   MasterEdition master_edition = 3;
 }
 
-message UpdateMasterEditionTransaction {
-  string project_id = 1;
-  string collection_id = 2;
-  MasterEdition master_edition = 3;
-}
-
 message MintMetaplexEditionTransaction {
   string project_id = 1;
   string collection_id = 2;
@@ -141,7 +134,7 @@ message PolygonEvents {
   }
 }
 
-message NftEvents{
+message NftEvents {
   oneof event {
     DropTransaction create_drop = 4;
     MintTransaction mint_drop = 5;
