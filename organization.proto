@@ -41,6 +41,6 @@ message OrganizationEvents {
     Member member_added = 5;
     Member member_deactivated = 6;
     Member member_reactivated = 7;
-    Invite send_invite = 8;
+    Invite invite_created = 8;
   }
 }
