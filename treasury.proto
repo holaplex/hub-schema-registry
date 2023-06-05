@@ -83,6 +83,12 @@ message TreasuryEvents {
     string transfer_id = 6;
   }
 
+  message SignedTransaction {
+    bytes serialized_message = 1;
+    repeated string signed_message_signatures = 2;
+    string project_id = 3;
+  }
+
   message SubmitEditionTransaction {
     string signed_transaction_hash = 1;
     string signer_address = 2;
@@ -101,5 +107,11 @@ message TreasuryEvents {
     DropMinted mint_retried = 11;
     DropCreated drop_retried = 12;
     SubmitEditionTransaction submit_edition_transaction = 13;
+    SignedTransaction solana_create_drop_signed = 14;
+    SignedTransaction solana_retry_create_drop_signed = 15;
+    SignedTransaction solana_update_drop_signed = 16;
+    SignedTransaction solana_mint_drop_signed = 17;
+    SignedTransaction solana_retry_mint_drop_signed = 18;
+    SignedTransaction solana_transfer_asset_signed = 19;
   }
 }

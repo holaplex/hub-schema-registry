@@ -6,6 +6,8 @@ message SolanaNftEventKey {
   string id = 1;
 
   string user_id = 2;
+
+  string project_id = 3;
 }
 
 message SolanaTransaction {
