@@ -8,6 +8,9 @@ message NftEventKey {
 
   // the user that triggered the event
   string user_id = 2;
+
+  // the project that the event is associated with
+  string project_id = 3;
 }
 
 enum Blockchain {
@@ -128,7 +131,7 @@ message SolanaEvents {
 
 message PolygonEvents {
   oneof event {
-    CreateEditionTransaction created_drop = 1;
+    CreateEditionTransaction create_drop = 1;
     MintEditionTransaction mint_drop = 2;
     UpdateEdtionTransaction update_drop = 3;
   }
