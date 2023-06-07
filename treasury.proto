@@ -85,32 +85,15 @@ message TreasuryEvents {
     string transfer_id = 6;
   }
   
-  message SolanaSignedTransaction {
+  message SolanaSignedTxn {
     bytes serialized_message = 1;
     repeated string signed_message_signatures = 2;
+    string project_id = 3;
   }
 
-  message PolygonSignedTransaction {
-    string to_do = 1;
-  }
-
-  message SignedTransaction {
-    oneof transaction {
-      SolanaSignedTransaction solana = 1;
-      PolygonSignedTransaction polygon = 2;
-    }
-  }
-
-  message SignedTransactionEvent {
-    oneof event {
-      SignedTransaction create_drop = 1;
-      SignedTransaction retry_create_drop = 2;
-      SignedTransaction update_drop = 3;
-      SignedTransaction mint_drop = 4;
-      SignedTransaction retry_mint_drop = 5;
-      SignedTransaction transfer_asset = 6;
-
-    }
+  message PolygonTxnResult {
+    optional string hash = 1;
+    TransactionStatus status = 2;
   }
 
   oneof event {
@@ -123,6 +106,13 @@ message TreasuryEvents {
     MintTransfered mint_transfered = 10;
     DropMinted mint_retried = 11;
     DropCreated drop_retried = 12;
-    SignedTransactionEvent message_signed = 13;
+    SolanaSignedTxn solana_create_drop_signed = 13;
+    SolanaSignedTxn solana_retry_create_drop_signed = 14;
+    SolanaSignedTxn solana_update_drop_signed = 15;
+    SolanaSignedTxn solana_mint_drop_signed = 16;
+    SolanaSignedTxn solana_retry_mint_drop_signed = 17;
+    SolanaSignedTxn solana_transfer_asset_signed = 18;
+    PolygonTxnResult polygon_create_drop_txn_submitted = 19;
+
   }
 }

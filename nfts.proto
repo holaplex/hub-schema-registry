@@ -128,7 +128,7 @@ message SolanaEvents {
 
 message PolygonEvents {
   oneof event {
-    CreateEditionTransaction created_drop = 1;
+    CreateEditionTransaction create_drop = 1;
     MintEditionTransaction mint_drop = 2;
     UpdateEdtionTransaction update_drop = 3;
   }
