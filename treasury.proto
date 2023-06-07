@@ -6,6 +6,8 @@ message TreasuryEventKey {
   string id = 1;
   // the user who triggered the event
   string user_id = 2;
+
+  optional string project_id = 3;
 }
 
 message TreasuryEvents {
@@ -86,7 +88,6 @@ message TreasuryEvents {
   message SolanaSignedTransaction {
     bytes serialized_message = 1;
     repeated string signed_message_signatures = 2;
-    string project_id = 3;
   }
 
   message PolygonSignedTransaction {
