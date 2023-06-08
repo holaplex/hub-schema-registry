@@ -62,23 +62,21 @@ message EditionInfo {
 
 message CreateEditionTransaction {
   EditionInfo edition_info = 1;
-  string project_id = 2;
-  int64 edition_id = 4;
-  string receiver = 5;
-  int64 amount = 6;
-  string fee_receiver = 8;
-  int32 fee_numerator = 7;
+  string receiver = 2;
+  int64 amount = 3;
+  string fee_receiver = 4;
+  int32 fee_numerator = 5;
 }
 
 message MintEditionTransaction {
-  int64 edition_id = 1;
-  string receiver = 2;
+  string receiver = 1;
+  string collection_id = 2;
   int64 amount = 3;
 }
 
 message UpdateEdtionTransaction {
   EditionInfo edition_info = 1;
-  string project_id = 2;
+  string collection_id = 2;
 }
 
 message Creator {
@@ -131,6 +129,8 @@ message PolygonEvents {
     CreateEditionTransaction create_drop = 1;
     MintEditionTransaction mint_drop = 2;
     UpdateEdtionTransaction update_drop = 3;
+    CreateEditionTransaction retry_drop = 4;
+    MintEditionTransaction retry_mint_drop = 5;
   }
 }
 
