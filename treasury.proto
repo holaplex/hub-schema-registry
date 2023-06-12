@@ -7,7 +7,7 @@ message TreasuryEventKey {
   // the user who triggered the event
   string user_id = 2;
 
-  optional string project_id = 3;
+  string project_id = 3;
 }
 
 message TreasuryEvents {
@@ -91,7 +91,7 @@ message TreasuryEvents {
   }
 
   message PolygonTransactionResult {
-    optional string hash = 1;
+    string hash = 1;
     TransactionStatus status = 2;
   }
 

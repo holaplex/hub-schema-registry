@@ -16,7 +16,7 @@ message SolanaPendingTransaction {
 }
 
 message SolanaCompletedTransaction {
-  optional string signature = 1;
+  string signature = 1;
 }
 
 message SolanaNftEvents {
