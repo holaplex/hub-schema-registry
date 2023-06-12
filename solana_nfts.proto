@@ -10,28 +10,28 @@ message SolanaNftEventKey {
   string project_id = 3;
 }
 
-message SolanaTransaction {
+message SolanaPendingTransaction {
   bytes serialized_message = 1;
-  repeated string signed_message_signatures = 2;
+  repeated string signatures_or_signers_public_keys = 2;
 }
 
-message SolanaTransactionResponse {
+message SolanaCompletedTransaction {
   optional string signature = 1;
 }
 
 message SolanaNftEvents {
   oneof event {
-    SolanaTransaction sign_create_drop = 1;
-    SolanaTransaction sign_update_drop = 2;
-    SolanaTransaction sign_mint_drop = 3;
-    SolanaTransaction sign_transfer_asset = 4;
-    SolanaTransaction sign_retry_create_drop = 5;
-    SolanaTransaction sign_retry_mint_drop = 6;
-    SolanaTransactionResponse create_drop_submitted = 7;
-    SolanaTransactionResponse update_drop_submitted = 8;
-    SolanaTransactionResponse mint_drop_submitted = 9;
-    SolanaTransactionResponse transfer_asset_submitted = 10;
-    SolanaTransactionResponse retry_create_drop_submitted = 11;
-    SolanaTransactionResponse retry_mint_drop_submitted = 12;
+    SolanaPendingTransaction create_drop_signing_requested = 1;
+    SolanaPendingTransaction update_drop_signing_requested = 2;
+    SolanaPendingTransaction mint_drop_signing_requested = 3;
+    SolanaPendingTransaction transfer_asset_signing_requested = 4;
+    SolanaPendingTransaction retry_create_drop_signing_requested = 5;
+    SolanaPendingTransaction retry_mint_drop_signing_requested = 6;
+    SolanaCompletedTransaction create_drop_submitted = 7;
+    SolanaCompletedTransaction update_drop_submitted = 8;
+    SolanaCompletedTransaction mint_drop_submitted = 9;
+    SolanaCompletedTransaction transfer_asset_submitted = 10;
+    SolanaCompletedTransaction retry_create_drop_submitted = 11;
+    SolanaCompletedTransaction retry_mint_drop_submitted = 12;
   }
 }

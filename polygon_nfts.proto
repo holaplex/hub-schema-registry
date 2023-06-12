@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package polygon_nfts;
+package polygon_nfts.proto;
 
 message PolygonNftEventKey {
   string id = 1;
