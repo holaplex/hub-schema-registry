@@ -12,8 +12,28 @@ message PolygonTransaction {
   bytes data = 1;
 }
 
+message PermitArgsHash {
+  bytes data = 1;
+  string owner = 2;
+  string spender = 3;
+  string recipient = 4;
+  int32 edition_id = 5;
+  int64 amount = 6;
+}
+
+message PolygonTokenTransferTxns {
+  PolygonTransaction permit_token_transfer_txn = 1;
+  PolygonTransaction safe_transfer_from_txn = 2;
+}
+
 message PolygonNftEvents {
   oneof event {
     PolygonTransaction submit_create_drop_txn = 1;
+    PolygonTransaction submit_retry_create_drop_txn = 2;
+    PolygonTransaction submit_mint_drop_txn = 3;
+    PolygonTransaction submit_update_drop_txn = 4;
+    PolygonTransaction submit_retry_mint_drop_txn = 5;
+    PermitArgsHash sign_permit_token_transfer_hash = 6;
+    PolygonTokenTransferTxns submit_transfer_asset_txns = 7;
   }
 }
