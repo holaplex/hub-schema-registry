@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package polygon_nfts.proto;
+
+message PolygonNftEventKey {
+  string id = 1;
+  string user_id = 2;
+  string project_id = 3;
+}
+
+message PolygonTransaction {
+  bytes data = 1;
+}
+
+message PolygonNftEvents {
+  oneof event {
+    PolygonTransaction submit_create_drop_txn = 1;
+  }
+}

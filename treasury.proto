@@ -90,6 +90,11 @@ message TreasuryEvents {
     repeated string signed_message_signatures = 2;
   }
 
+  message PolygonTransactionResult {
+    optional string hash = 1;
+    TransactionStatus status = 2;
+  }
+
   oneof event {
     CustomerTreasury customer_treasury_created = 4;
     CustomerWallet customer_wallet_created = 5;
@@ -106,5 +111,6 @@ message TreasuryEvents {
     SolanaSignedTransaction solana_mint_drop_signed = 16;
     SolanaSignedTransaction solana_retry_mint_drop_signed = 17;
     SolanaSignedTransaction solana_transfer_asset_signed = 18;
+    PolygonTransactionResult polygon_create_drop_txn_submitted = 19;
   }
 }
