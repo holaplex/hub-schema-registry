@@ -1,9 +1,0 @@
-syntax = "proto3";
-
-
-package transaction.proto;
-
-message Transaction {
-  bytes serialized_message = 1;
-  repeated string signed_message_signatures = 2;
-}

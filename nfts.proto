@@ -53,35 +53,6 @@ message TransferMintTransaction {
   string transfer_id = 6;
 }
 
-message EditionInfo {
-  string description = 1;
-  string image_uri = 2;
-  string collection = 3;
-  string uri = 4;
-  string creator = 5;
-}
-
-message CreateEditionTransaction {
-  EditionInfo edition_info = 1;
-  string project_id = 2;
-  int64 edition_id = 4;
-  string receiver = 5;
-  int64 amount = 6;
-  string fee_receiver = 8;
-  int32 fee_numerator = 7;
-}
-
-message MintEditionTransaction {
-  int64 edition_id = 1;
-  string receiver = 2;
-  int64 amount = 3;
-}
-
-message UpdateEdtionTransaction {
-  EditionInfo edition_info = 1;
-  string project_id = 2;
-}
-
 message Creator {
   string address = 1;
   int32 share = 2;
@@ -124,14 +95,6 @@ message SolanaEvents {
     MintMetaplexEditionTransaction mint_drop = 4;
     MintMetaplexEditionTransaction retry_mint_drop = 5;
     TransferMetaplexAssetTransaction transfer_asset = 6;
-  }
-}
-
-message PolygonEvents {
-  oneof event {
-    CreateEditionTransaction create_drop = 1;
-    MintEditionTransaction mint_drop = 2;
-    UpdateEdtionTransaction update_drop = 3;
   }
 }
 
