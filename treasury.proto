@@ -6,6 +6,8 @@ message TreasuryEventKey {
   string id = 1;
   // the user who triggered the event
   string user_id = 2;
+
+  optional string project_id = 3;
 }
 
 message TreasuryEvents {
@@ -82,6 +84,11 @@ message TreasuryEvents {
     string project_id = 5;
     string transfer_id = 6;
   }
+  
+  message SolanaSignedTransaction {
+    bytes serialized_message = 1;
+    repeated string signed_message_signatures = 2;
+  }
 
   oneof event {
     CustomerTreasury customer_treasury_created = 4;
@@ -93,5 +100,11 @@ message TreasuryEvents {
     MintTransfered mint_transfered = 10;
     DropMinted mint_retried = 11;
     DropCreated drop_retried = 12;
+    SolanaSignedTransaction solana_create_drop_signed = 13;
+    SolanaSignedTransaction solana_retry_create_drop_signed = 14;
+    SolanaSignedTransaction solana_update_drop_signed = 15;
+    SolanaSignedTransaction solana_mint_drop_signed = 16;
+    SolanaSignedTransaction solana_retry_mint_drop_signed = 17;
+    SolanaSignedTransaction solana_transfer_asset_signed = 18;
   }
 }

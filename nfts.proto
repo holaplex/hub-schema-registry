@@ -1,12 +1,16 @@
 syntax = "proto3";
 
-
 package nfts.proto;
 
 message NftEventKey {
+  // the primary object id
   string id = 1;
+
   // the user that triggered the event
   string user_id = 2;
+
+  // the project that triggered the event
+  string project_id = 3;
 }
 
 enum Blockchain {
@@ -49,7 +53,52 @@ message TransferMintTransaction {
   string transfer_id = 6;
 }
 
-message NftEvents{
+message Creator {
+  string address = 1;
+  int32 share = 2;
+  bool verified = 3;
+}
+
+message MasterEdition {
+  string name = 3;
+  string symbol = 4;
+  string metadata_uri = 5;
+  repeated Creator creators = 6;
+  int32 seller_fee_basis_points = 7;
+  optional int64 supply = 8;
+  string owner_address = 9;
+}
+
+message MetaplexMasterEditionTransaction {
+  string collection_id = 2;
+  MasterEdition master_edition = 3;
+}
+
+message MintMetaplexEditionTransaction {
+  string collection_id = 2;
+  string recipient_address = 3;
+  string owner_address = 4;
+  int64 edition = 5;
+}
+
+message TransferMetaplexAssetTransaction {
+  string recipient_address = 1;
+  string owner_address = 2;
+  string collection_mint_id = 3;
+}
+
+message SolanaEvents {
+  oneof event {
+    MetaplexMasterEditionTransaction create_drop = 1;
+    MetaplexMasterEditionTransaction retry_drop = 2;
+    MetaplexMasterEditionTransaction update_drop = 3;
+    MintMetaplexEditionTransaction mint_drop = 4;
+    MintMetaplexEditionTransaction retry_mint_drop = 5;
+    TransferMetaplexAssetTransaction transfer_asset = 6;
+  }
+}
+
+message NftEvents {
   oneof event {
     DropTransaction create_drop = 4;
     MintTransaction mint_drop = 5;
