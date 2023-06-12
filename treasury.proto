@@ -128,6 +128,10 @@ message TreasuryEvents {
     SolanaSignedTransaction solana_transfer_asset_signed = 18;
     PolygonTransactionResult polygon_create_drop_txn_submitted = 19;
     PolygonPermitHashSignature polygon_permit_transfer_token_hash_signed = 20;
-
+    PolygonTransactionResult polygon_retry_create_drop_submitted = 21;
+    PolygonTransactionResult polygon_update_drop_submitted = 22;
+    PolygonTransactionResult polygon_mint_drop_submitted = 23;
+    PolygonTransactionResult polygon_retry_mint_drop_submitted = 24;
+    PolygonTransactionResult polygon_transfer_asset_submitted = 25;
   }
 }
