@@ -65,7 +65,7 @@ message MasterEdition {
   string metadata_uri = 5;
   repeated Creator creators = 6;
   int32 seller_fee_basis_points = 7;
-  int64 supply = 8;
+  optional int64 supply = 8;
   string owner_address = 9;
 }
 
