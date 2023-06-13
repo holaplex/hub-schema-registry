@@ -106,7 +106,7 @@ message TreasuryEvents {
   }
 
   message PolygonTransactionResult {
-    string hash = 1;
+    optional string hash = 1;
     TransactionStatus status = 2;
   }
 
