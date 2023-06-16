@@ -69,12 +69,10 @@ message MasterEdition {
 }
 
 message MetaplexMasterEditionTransaction {
-  string collection_id = 2;
   MasterEdition master_edition = 3;
 }
 
 message MintMetaplexEditionTransaction {
-  string collection_id = 2;
   string recipient_address = 3;
   string owner_address = 4;
   int64 edition = 5;
