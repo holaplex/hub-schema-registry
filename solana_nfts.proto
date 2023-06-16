@@ -10,13 +10,32 @@ message SolanaNftEventKey {
   string project_id = 3;
 }
 
+enum SolanaTransactionFailureReason {
+  ASSEMBLE = 0;
+  SUBMIT = 1;
+  SIGN = 2;
+}
+
 message SolanaPendingTransaction {
   bytes serialized_message = 1;
   repeated string signatures_or_signers_public_keys = 2;
 }
 
-message SolanaCompletedTransaction {
+message SolanaCompletedMintTransaction {
   string signature = 1;
+  string address = 2;
+}
+
+message SolanaCompletedTransferTransaction {
+  string signature = 1;
+}
+
+message SolanaCompletedUpdateTransaction {
+  string signature = 1;
+}
+
+message SolanaFailedTransaction {
+  SolanaTransactionFailureReason reason = 1;
 }
 
 message SolanaNftEvents {
@@ -27,11 +46,17 @@ message SolanaNftEvents {
     SolanaPendingTransaction transfer_asset_signing_requested = 4;
     SolanaPendingTransaction retry_create_drop_signing_requested = 5;
     SolanaPendingTransaction retry_mint_drop_signing_requested = 6;
-    SolanaCompletedTransaction create_drop_submitted = 7;
-    SolanaCompletedTransaction update_drop_submitted = 8;
-    SolanaCompletedTransaction mint_drop_submitted = 9;
-    SolanaCompletedTransaction transfer_asset_submitted = 10;
-    SolanaCompletedTransaction retry_create_drop_submitted = 11;
-    SolanaCompletedTransaction retry_mint_drop_submitted = 12;
+    SolanaCompletedMintTransaction create_drop_submitted = 7;
+    SolanaCompletedUpdateTransaction update_drop_submitted = 8;
+    SolanaCompletedMintTransaction mint_drop_submitted = 9;
+    SolanaCompletedTransferTransaction transfer_asset_submitted = 10;
+    SolanaCompletedMintTransaction retry_create_drop_submitted = 11;
+    SolanaCompletedMintTransaction retry_mint_drop_submitted = 12;
+    SolanaFailedTransaction create_drop_failed = 13;
+    SolanaFailedTransaction update_drop_failed = 14;
+    SolanaFailedTransaction mint_drop_failed = 15;
+    SolanaFailedTransaction transfer_asset_failed = 16;
+    SolanaFailedTransaction retry_create_drop_failed = 17;
+    SolanaFailedTransaction retry_mint_drop_failed = 18;
   }
 }
