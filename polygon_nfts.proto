@@ -10,6 +10,8 @@ message PolygonNftEventKey {
 
 message PolygonTransaction {
   bytes data = 1;
+  string contract_address = 2;
+  int32 edition_id = 3;
 }
 
 message PermitArgsHash {

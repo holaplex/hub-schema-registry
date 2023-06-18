@@ -16,7 +16,6 @@ enum Action {
   RETRY_MINT = 4;
   CREATE_WALLET = 5;
   RETRY_DROP = 6;
-
 }
 
 enum Blockchain {
