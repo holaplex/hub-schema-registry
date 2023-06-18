@@ -109,6 +109,8 @@ message TreasuryEvents {
   message PolygonTransactionResult {
     optional string hash = 1;
     TransactionStatus status = 2;
+    string contract_address = 3;
+    int32 edition_id = 4;
   }
 
   oneof event {

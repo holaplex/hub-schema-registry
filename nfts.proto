@@ -98,18 +98,15 @@ message CreateEditionTransaction {
   int64 amount = 6;
   int32 fee_numerator = 7;
   string fee_receiver = 8;
-  string collection_id = 9;
 }
 
 message MintEditionTransaction {
   string receiver = 2;
   int64 amount = 3;
-  string collection_id = 4;
 }
 
 message UpdateEdtionTransaction {
   EditionInfo edition_info = 1;
-  string collection_id = 2;
 }
 
 message SolanaEvents {
