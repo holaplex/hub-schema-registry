@@ -2,6 +2,8 @@ syntax = "proto3";
 
 package polygon_nfts.proto;
 
+import "google/protobuf/timestamp.proto";
+
 message PolygonNftEventKey {
   string id = 1;
   string user_id = 2;
@@ -28,6 +30,12 @@ message PolygonTokenTransferTxns {
   PolygonTransaction safe_transfer_from_txn = 2;
 }
 
+message MintedTokensOwnershipUpdate {
+  repeated string mint_ids  = 1;
+  string new_owner = 2;
+  google.protobuf.Timestamp timestamp = 3;
+}
+
 message PolygonNftEvents {
   oneof event {
     PolygonTransaction submit_create_drop_txn = 1;
@@ -37,5 +45,6 @@ message PolygonNftEvents {
     PolygonTransaction submit_retry_mint_drop_txn = 5;
     PermitArgsHash sign_permit_token_transfer_hash = 6;
     PolygonTokenTransferTxns submit_transfer_asset_txns = 7;
+    MintedTokensOwnershipUpdate update_mints_owner = 8;
   }
 }
