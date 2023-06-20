@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package polygon_nfts.proto;
 
-import "google/protobuf/timestamp.proto";
+import "timestamp.proto";
 
 message PolygonNftEventKey {
   string id = 1;
