@@ -38,6 +38,12 @@ message SolanaFailedTransaction {
   SolanaTransactionFailureReason reason = 1;
 }
 
+message MintOwnershipUpdate {
+  string mint_address  = 1;
+  string sender = 2;
+  string recipient = 3;
+}
+
 message SolanaNftEvents {
   oneof event {
     SolanaPendingTransaction create_drop_signing_requested = 1;
@@ -58,5 +64,6 @@ message SolanaNftEvents {
     SolanaFailedTransaction transfer_asset_failed = 16;
     SolanaFailedTransaction retry_create_drop_failed = 17;
     SolanaFailedTransaction retry_mint_drop_failed = 18;
+    MintOwnershipUpdate update_mint_owner = 19;
   }
 }
