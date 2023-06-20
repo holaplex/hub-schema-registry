@@ -34,6 +34,7 @@ message MintedTokensOwnershipUpdate {
   repeated string mint_ids  = 1;
   string new_owner = 2;
   google.protobuf.Timestamp timestamp = 3;
+  string transaction_hash = 4;
 }
 
 message PolygonNftEvents {
