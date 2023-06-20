@@ -115,6 +115,15 @@ enum CreationStatus {
   FAILED = 2;
 }
 
+message DropCreation {
+  CreationStatus status = 2;
+}
+
+message MintCreation {
+  string drop_id = 1;
+  CreationStatus status = 2;
+}
+
 message SolanaEvents {
   oneof event {
     MetaplexMasterEditionTransaction create_drop = 1;
@@ -130,8 +139,7 @@ message TransferPolygonAsset {
   string collection_mint_id = 1;
   string owner_address = 2;
   string recipient_address = 3;
-  int64 amount = 4;
-  
+  int64 amount = 4;  
 }
 
 message PolygonEvents {
@@ -153,7 +161,7 @@ message NftEvents {
     TransferMintTransaction transfer_mint = 7;
     MintTransaction retry_mint = 8;
     DropTransaction retry_drop = 9;
-    CreationStatus drop_created = 10;
-    CreationStatus drop_minted = 11;
+    DropCreation drop_created = 10;
+    MintCreation drop_minted = 11;
   }
 }
