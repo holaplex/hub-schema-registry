@@ -76,6 +76,7 @@ message MintMetaplexEditionTransaction {
   string recipient_address = 3;
   string owner_address = 4;
   int64 edition = 5;
+  string collection_id = 6;
 }
 
 message TransferMetaplexAssetTransaction {
