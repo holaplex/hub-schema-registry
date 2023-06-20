@@ -42,8 +42,7 @@ message MintOwnershipUpdate {
   string mint_address  = 1;
   string sender = 2;
   string recipient = 3;
-  string source_ata = 4;
-  string destination_ata = 5;
+  string tx_signature = 5;
 }
 
 message SolanaNftEvents {
