@@ -95,7 +95,6 @@ message EditionInfo {
 
 message CreateEditionTransaction {
   EditionInfo edition_info = 1;
-  string receiver = 5;
   int64 amount = 6;
   int32 fee_numerator = 7;
   string fee_receiver = 8;
