@@ -104,6 +104,7 @@ message CreateEditionTransaction {
 message MintEditionTransaction {
   string receiver = 2;
   int64 amount = 3;
+  string collection_id = 4;
 }
 
 message UpdateEdtionTransaction {
