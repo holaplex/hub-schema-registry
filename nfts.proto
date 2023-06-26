@@ -2,6 +2,12 @@ syntax = "proto3";
 
 package nfts.proto;
 
+enum EventType {
+  SOLANA = 0;
+  POLYGON = 1;
+  NFTS = 2;
+}
+
 message NftEventKey {
   // the primary object id
   string id = 1;
@@ -11,6 +17,8 @@ message NftEventKey {
 
   // the project that triggered the event
   string project_id = 3;
+
+  EventType event_type = 4;
 }
 
 enum Blockchain {
@@ -153,6 +161,8 @@ message PolygonEvents {
     TransferPolygonAsset transfer_asset = 6;
   }
 }
+
+
 
 message NftEvents {
   oneof event {
