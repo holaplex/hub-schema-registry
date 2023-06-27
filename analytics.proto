@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package analytics.proto;
 
-import "google/protobuf/timestamp.proto";
+import "timestamp.proto";
 
 message Datapoint {
   google.protobuf.Timestamp ts = 1;
