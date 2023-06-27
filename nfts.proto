@@ -125,33 +125,11 @@ message MintCreation {
   CreationStatus status = 2;
 }
 
-message SolanaEvents {
-  oneof event {
-    MetaplexMasterEditionTransaction create_drop = 1;
-    MetaplexMasterEditionTransaction retry_drop = 2;
-    MetaplexMasterEditionTransaction update_drop = 3;
-    MintMetaplexEditionTransaction mint_drop = 4;
-    MintMetaplexEditionTransaction retry_mint_drop = 5;
-    TransferMetaplexAssetTransaction transfer_asset = 6;
-  }
-}
-
 message TransferPolygonAsset {
   string collection_mint_id = 1;
   string owner_address = 2;
   string recipient_address = 3;
   int64 amount = 4;  
-}
-
-message PolygonEvents {
-  oneof event {
-    CreateEditionTransaction create_drop = 1;
-    MintEditionTransaction mint_drop = 2;
-    UpdateEdtionTransaction update_drop = 3;
-    CreateEditionTransaction retry_drop = 4;
-    MintEditionTransaction retry_mint_drop = 5;
-    TransferPolygonAsset transfer_asset = 6;
-  }
 }
 
 message NftEvents {
@@ -164,5 +142,17 @@ message NftEvents {
     DropTransaction retry_drop = 9;
     DropCreation drop_created = 10;
     MintCreation drop_minted = 11;
+    CreateEditionTransaction polygon_create_drop = 20;
+    MintEditionTransaction polygon_mint_drop = 21;
+    UpdateEdtionTransaction polygon_update_drop = 22;
+    CreateEditionTransaction polygon_retry_drop = 23;
+    MintEditionTransaction polygon_retry_mint_drop = 24;
+    TransferPolygonAsset polygon_transfer_asset = 25;
+    MetaplexMasterEditionTransaction solana_create_drop = 26;
+    MetaplexMasterEditionTransaction solana_retry_drop = 27;
+    MetaplexMasterEditionTransaction solana_update_drop = 28;
+    MintMetaplexEditionTransaction solana_mint_drop = 29;
+    MintMetaplexEditionTransaction solana_retry_mint_drop = 30;
+    TransferMetaplexAssetTransaction solana_transfer_asset = 31;
   }
 }
