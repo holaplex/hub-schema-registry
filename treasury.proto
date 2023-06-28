@@ -37,16 +37,17 @@ message TreasuryEvents {
   }
 
   enum Blockchain {
-    BLOCKCHAIN_UNSPECIFIED=0;
-    BLOCKCHAIN_SOLANA=1;
-    BLOCKCHAIN_POLYGON =2;
-    BLOCKCHAIN_ETHEREUM=3;
+    BLOCKCHAIN_UNSPECIFIED = 0;
+    BLOCKCHAIN_SOLANA = 1;
+    BLOCKCHAIN_POLYGON = 2;
+    BLOCKCHAIN_ETHEREUM = 3;
   }
 
   message CustomerWallet {
     string project_id = 2;
     string customer_id = 3;
     Blockchain blockchain = 4;
+    string wallet_address = 5;
   }
 
   message ProjectWallet {
