@@ -77,10 +77,6 @@ message MetaplexMetadata {
   string owner_address = 9;
 }
 
-message MetaplexCertifiedCollectionTransaction {
-  MetaplexMetadata metadata = 1;
-}
-
 message MetaplexMasterEditionTransaction {
   MasterEdition master_edition = 3;
 }
@@ -196,9 +192,9 @@ message NftEvents {
     MintMetaplexEditionTransaction solana_mint_drop = 29;
     MintMetaplexEditionTransaction solana_retry_mint_drop = 30;
     TransferMetaplexAssetTransaction solana_transfer_asset = 31;
-    MetaplexCertifiedCollectionTransaction solana_create_collection = 32;
-    MetaplexCertifiedCollectionTransaction solana_update_collection = 33;
-    MetaplexCertifiedCollectionTransaction solana_retry_create_collection = 34;
+    MetaplexMasterEditionTransaction solana_create_collection = 32;
+    MetaplexMasterEditionTransaction solana_update_collection = 33;
+    MetaplexMasterEditionTransaction solana_retry_create_collection = 34;
     MintMetaplexMetadataTransaction solana_mint_to_collection = 35;
     MintMetaplexMetadataTransaction solana_retry_mint_to_collection = 36;
   }
