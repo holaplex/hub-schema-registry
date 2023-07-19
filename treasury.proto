@@ -137,5 +137,8 @@ message TreasuryEvents {
     PolygonTransactionResult polygon_mint_drop_submitted = 23;
     PolygonTransactionResult polygon_retry_mint_drop_submitted = 24;
     PolygonTransactionResult polygon_transfer_asset_submitted = 25;
+    SolanaTransactionResult solana_create_collection_signed = 26;
+    SolanaTransactionResult solana_update_collection_signed = 27;
+    SolanaTransactionResult solana_retry_create_collection_signed = 28;
   }
 }
