@@ -66,5 +66,14 @@ message SolanaNftEvents {
     SolanaFailedTransaction retry_create_drop_failed = 17;
     SolanaFailedTransaction retry_mint_drop_failed = 18;
     MintOwnershipUpdate update_mint_owner = 19;
+    SolanaPendingTransaction create_collection_signing_requested = 20;
+    SolanaCompletedMintTransaction create_collection_submitted = 21;
+    SolanaFailedTransaction create_collection_failed = 22;
+    SolanaPendingTransaction update_collection_signing_requested = 23;
+    SolanaCompletedUpdateTransaction update_collection_submitted = 24;
+    SolanaFailedTransaction update_collection_failed = 25;
+    SolanaPendingTransaction retry_create_collection_signing_requested = 26;
+    SolanaCompletedMintTransaction retry_create_collection_submitted = 27;
+    SolanaFailedTransaction retry_create_collection_failed = 28;
   }
 }
