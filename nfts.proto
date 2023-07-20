@@ -208,5 +208,6 @@ message NftEvents {
     MintMetaplexMetadataTransaction solana_retry_mint_to_collection = 36;
     CollectionCreation collection_created = 37;
     MintCollectionCreation minted_to_collection = 38;
+    string started_importing_solana_collection = 39;
   }
 }
