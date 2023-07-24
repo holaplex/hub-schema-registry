@@ -79,5 +79,7 @@ message SolanaNftEvents {
     SolanaFailedTransaction mint_to_collection_failed = 30;
     SolanaPendingTransaction retry_mint_to_collection_requested = 31;
     SolanaFailedTransaction retry_mint_to_collection_failed = 32;
+    SolanaCompletedMintTransaction mint_to_collection_submitted = 33;
+    SolanaCompletedMintTransaction retry_mint_to_collection_submitted = 34;
   }
 }
