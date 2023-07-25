@@ -136,6 +136,15 @@ message DropCreation {
   CreationStatus status = 2;
 }
 
+message CollectionCreation {
+  CreationStatus status = 2;
+}
+
+message MintCollectionCreation {
+  string collection_id = 1;
+  CreationStatus status = 2;
+}
+
 message MintCreation {
   string drop_id = 1;
   CreationStatus status = 2;
@@ -197,5 +206,7 @@ message NftEvents {
     MetaplexMasterEditionTransaction solana_retry_create_collection = 34;
     MintMetaplexMetadataTransaction solana_mint_to_collection = 35;
     MintMetaplexMetadataTransaction solana_retry_mint_to_collection = 36;
+    CollectionCreation collection_created = 37;
+    MintCollectionCreation minted_to_collection = 38;
   }
 }
