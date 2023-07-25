@@ -45,6 +45,55 @@ message MintOwnershipUpdate {
   string tx_signature = 5;
 }
 
+
+message SolanaCollectionPayload {
+  optional uint32 supply = 2;
+  string mint_address = 3;
+  uint32 seller_fee_basis_points = 4;
+  repeated SolanaCreator creators = 5;
+  Metadata metadata = 6;
+  repeated File files = 7; 
+  string update_authority = 8;
+}
+
+message File {
+  string uri = 1;
+  optional string mime = 2;
+}
+
+message Metadata {
+  string name = 1;
+  optional string description = 2;
+  string symbol = 3;
+  repeated Attribute attributes = 4;
+  string uri = 5;
+  string image = 6;
+}
+
+message Attribute {
+  string value = 1;
+  string trait_type = 2;
+}
+
+message SolanaCreator {
+  string address = 1;
+  bool verified = 2;
+  uint32 share = 3;
+}
+
+message SolanaMintPayload {
+  string collection_id = 2;
+  string mint_address = 3;
+  string owner = 4;
+  string update_authority = 5;
+  uint32 seller_fee_basis_points = 6;
+  bool compressed = 7;
+  repeated SolanaCreator creators = 8;
+  repeated File files = 9;
+  Metadata metadata = 10;
+}
+
+
 message SolanaNftEvents {
   oneof event {
     SolanaPendingTransaction create_drop_signing_requested = 1;
@@ -81,5 +130,7 @@ message SolanaNftEvents {
     SolanaFailedTransaction retry_mint_to_collection_failed = 32;
     SolanaCompletedMintTransaction mint_to_collection_submitted = 33;
     SolanaCompletedMintTransaction retry_mint_to_collection_submitted = 34;
+    SolanaCollectionPayload imported_external_collection = 35;
+    SolanaMintPayload imported_external_mint = 36;
   }
 }
