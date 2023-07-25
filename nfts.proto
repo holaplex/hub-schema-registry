@@ -179,6 +179,10 @@ message PolygonEvents {
   }
 }
 
+message CollectionImport {
+  string mint_address = 1;
+}
+
 message NftEvents {
   oneof event {
     DropTransaction create_drop = 4;
@@ -208,6 +212,6 @@ message NftEvents {
     MintMetaplexMetadataTransaction solana_retry_mint_to_collection = 36;
     CollectionCreation collection_created = 37;
     MintCollectionCreation minted_to_collection = 38;
-    string started_importing_solana_collection = 39;
+    CollectionImport started_importing_solana_collection = 39;
   }
 }
