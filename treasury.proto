@@ -142,5 +142,6 @@ message TreasuryEvents {
     SolanaTransactionResult solana_retry_create_collection_signed = 28;
     SolanaTransactionResult solana_mint_to_collection_signed = 29;
     SolanaTransactionResult solana_retry_mint_to_collection_signed = 30;
+    SolanaTransactionResult solana_update_collection_mint_signed = 31;
   }
 }
