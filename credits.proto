@@ -19,6 +19,7 @@ enum Action {
   MINT = 7;
   MINT_COMPRESSED = 8;
   CREATE_COLLECTION = 9;
+  RETRY_COLLECTION = 10;
 }
 
 enum Blockchain {
