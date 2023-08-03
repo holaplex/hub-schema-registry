@@ -132,5 +132,8 @@ message SolanaNftEvents {
     SolanaCompletedMintTransaction retry_mint_to_collection_submitted = 34;
     SolanaCollectionPayload imported_external_collection = 35;
     SolanaMintPayload imported_external_mint = 36;
+    SolanaPendingTransaction update_collection_mint_signing_requested = 37;
+    SolanaFailedTransaction update_collection_mint_failed = 38;
+    SolanaCompletedUpdateTransaction update_collection_mint_submitted = 39;
   }
 }

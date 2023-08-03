@@ -88,6 +88,10 @@ message MintMetaplexMetadataTransaction {
   bool compressed = 4;
 }
 
+message MetaplexUpdateMetadataTransaction {
+  MetaplexMetadata metadata = 1;
+}
+
 message MintMetaplexEditionTransaction {
   string recipient_address = 3;
   string owner_address = 4;
@@ -213,5 +217,6 @@ message NftEvents {
     CollectionCreation collection_created = 37;
     MintCollectionCreation minted_to_collection = 38;
     CollectionImport started_importing_solana_collection = 39;
+    MintMetaplexMetadataTransaction solana_updated_collection_mint = 40;
   }
 }
