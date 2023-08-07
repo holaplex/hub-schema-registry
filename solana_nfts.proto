@@ -93,6 +93,9 @@ message SolanaMintPayload {
   Metadata metadata = 10;
 }
 
+message SolanaImportedCollectionPayload {
+  uint64 total_mints = 1;
+}
 
 message SolanaNftEvents {
   oneof event {
@@ -135,5 +138,6 @@ message SolanaNftEvents {
     SolanaPendingTransaction update_collection_mint_signing_requested = 37;
     SolanaFailedTransaction update_collection_mint_failed = 38;
     SolanaCompletedUpdateTransaction update_collection_mint_submitted = 39;
+    SolanaImportedCollectionPayload solana_collection_import_completed = 40;
   }
 }
