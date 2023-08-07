@@ -1,0 +1,57 @@
+version: "3"
+
+services:
+  redpanda:
+    container_name: redpanda
+    image: vectorized/redpanda:v22.3.6
+    command:
+      - redpanda start
+      - --smp 2
+      - --overprovisioned
+      - --node-id 0
+      - --memory 4G
+      - --kafka-addr PLAINTEXT://0.0.0.0:29092,OUTSIDE://0.0.0.0:9092
+      - --advertise-kafka-addr PLAINTEXT://redpanda:29092,OUTSIDE://0.0.0.0:9092
+      - --pandaproxy-addr 0.0.0.0:8082
+      - --advertise-pandaproxy-addr localhost:8082
+    networks:
+      web:
+    ports:
+      - 8081:8081
+      - 8082:8082
+      - 9092:9092
+      - 29092:29092
+
+  console:
+    container_name: redpanda-console
+    image: docker.redpanda.com/vectorized/console:master-173596f
+    restart: on-failure
+    entrypoint: /bin/sh
+    command: -c "echo \"$$CONSOLE_CONFIG_FILE\" > /tmp/config.yml; /app/console"
+    environment:
+      CONFIG_FILEPATH: /tmp/config.yml
+      CONSOLE_CONFIG_FILE: |
+        kafka:
+          brokers: ["redpanda:29092"]
+          schemaRegistry:
+            enabled: true
+            urls: ["http://redpanda:8081"]
+        connect:
+          enabled: true
+          clusters:
+            - name: datagen
+              url: http://connect:8083
+    networks:
+      web:
+    ports:
+      - "8090:8080"
+    depends_on:
+      - redpanda
+
+volumes:
+  hub_treasuries_db:
+    driver: local
+
+networks:
+  web:
+    driver: bridge

@@ -79,6 +79,7 @@ message MetaplexMetadata {
 
 message MetaplexMasterEditionTransaction {
   MasterEdition master_edition = 3;
+  string collection_id = 4;
 }
 
 message MintMetaplexMetadataTransaction {
@@ -86,6 +87,7 @@ message MintMetaplexMetadataTransaction {
   MetaplexMetadata metadata = 2;
   string collection_id = 3;
   bool compressed = 4;
+  string mint_id = 5;
 }
 
 message MetaplexUpdateMetadataTransaction {
