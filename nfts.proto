@@ -187,6 +187,12 @@ message CollectionImport {
   string mint_address = 1;
 }
 
+message UpdateSolanaMintPayload {
+  string mint_id = 1;
+  MetaplexMetadata metadata = 2;
+  string collection_id = 3;
+}
+
 message NftEvents {
   oneof event {
     DropTransaction create_drop = 4;
@@ -217,6 +223,6 @@ message NftEvents {
     CollectionCreation collection_created = 37;
     MintCollectionCreation minted_to_collection = 38;
     CollectionImport started_importing_solana_collection = 39;
-    MintMetaplexMetadataTransaction solana_updated_collection_mint = 40;
+    UpdateSolanaMintPayload solana_updated_collection_mint = 41;
   }
 }
