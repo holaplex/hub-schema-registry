@@ -21,6 +21,7 @@ enum Action {
   CREATE_COLLECTION = 9;
   RETRY_COLLECTION = 10;
   UPDATE_MINT = 11;
+  SWITCH_COLLECTION = 12;
 }
 
 enum Blockchain {
