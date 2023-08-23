@@ -204,8 +204,7 @@ message SolanaUpdatedMintPayload {
 
 message SwitchCollectionPayload {
   string mint_id = 1;
-  string mint_metadata = 2;
-  string collection_metadata = 3;
+  string collection_id = 2;
 }
 
 message NftEvents {
