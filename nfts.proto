@@ -240,6 +240,6 @@ message NftEvents {
     UpdateSolanaMintPayload solana_updated_collection_mint = 41;
     RetryUpdateSolanaMintPayload solana_retry_updated_collection_mint = 42;
     SolanaUpdatedMintPayload solana_mint_updated = 43;
-    SwitchCollectionPayload solana_switch_mint_collection = 44;
+    SwitchCollectionPayload solana_switch_mint_collection_requested = 44;
   }
 }
