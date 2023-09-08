@@ -138,6 +138,7 @@ enum CreationStatus {
 
 message DropCreation {
   CreationStatus status = 2;
+  string collection_id = 3;
 }
 
 message CollectionCreation {
