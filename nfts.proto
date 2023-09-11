@@ -223,11 +223,11 @@ message NftEvents {
     CreateEditionTransaction polygon_retry_drop = 23;
     MintEditionTransaction polygon_retry_mint_drop = 24;
     TransferPolygonAsset polygon_transfer_asset = 25;
-    MetaplexMasterEditionTransaction solana_create_drop = 26;
-    MetaplexMasterEditionTransaction solana_retry_drop = 27;
-    MetaplexMasterEditionTransaction solana_update_drop = 28;
-    MintMetaplexEditionTransaction solana_mint_drop = 29;
-    MintMetaplexEditionTransaction solana_retry_mint_drop = 30;
+    MetaplexMasterEditionTransaction solana_create_edition_drop = 26;
+    MetaplexMasterEditionTransaction solana_retry_edition_drop = 27;
+    MetaplexMasterEditionTransaction solana_update_edition_drop = 28;
+    MintMetaplexEditionTransaction solana_mint_edition_drop = 29;
+    MintMetaplexEditionTransaction solana_retry_mint_edition_drop = 30;
     TransferMetaplexAssetTransaction solana_transfer_asset = 31;
     MetaplexMasterEditionTransaction solana_create_collection = 32;
     MetaplexMasterEditionTransaction solana_update_collection = 33;
@@ -241,5 +241,10 @@ message NftEvents {
     RetryUpdateSolanaMintPayload solana_retry_updated_collection_mint = 42;
     SolanaUpdatedMintPayload solana_mint_updated = 43;
     SwitchCollectionPayload solana_switch_mint_collection_requested = 44;
+    MetaplexMasterEditionTransaction solana_create_open_drop = 45;
+    MetaplexMasterEditionTransaction solana_retry_open_drop = 46;
+    MetaplexMasterEditionTransaction solana_update_open_drop = 47;
+    MintMetaplexMetadataTransaction solana_mint_open_drop = 48;
+    MintMetaplexMetadataTransaction solana_retry_mint_open_drop = 49;
   }
 }

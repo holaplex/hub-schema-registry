@@ -26,25 +26,18 @@ message SolanaCompletedMintTransaction {
   string address = 2;
 }
 
-message SolanaCompletedTransferTransaction {
-  string signature = 1;
-}
+message SolanaCompletedTransferTransaction { string signature = 1; }
 
-message SolanaCompletedUpdateTransaction {
-  string signature = 1;
-}
+message SolanaCompletedUpdateTransaction { string signature = 1; }
 
-message SolanaFailedTransaction {
-  SolanaTransactionFailureReason reason = 1;
-}
+message SolanaFailedTransaction { SolanaTransactionFailureReason reason = 1; }
 
 message MintOwnershipUpdate {
-  string mint_address  = 1;
+  string mint_address = 1;
   string sender = 2;
   string recipient = 3;
   string tx_signature = 5;
 }
-
 
 message SolanaCollectionPayload {
   optional uint32 supply = 2;
@@ -52,7 +45,7 @@ message SolanaCollectionPayload {
   uint32 seller_fee_basis_points = 4;
   repeated SolanaCreator creators = 5;
   Metadata metadata = 6;
-  repeated File files = 7; 
+  repeated File files = 7;
   string update_authority = 8;
 }
 
@@ -93,27 +86,26 @@ message SolanaMintPayload {
   Metadata metadata = 10;
 }
 
-
 message SolanaNftEvents {
   oneof event {
-    SolanaPendingTransaction create_drop_signing_requested = 1;
-    SolanaPendingTransaction update_drop_signing_requested = 2;
-    SolanaPendingTransaction mint_drop_signing_requested = 3;
+    SolanaPendingTransaction create_edition_drop_signing_requested = 1;
+    SolanaPendingTransaction update_edition_drop_signing_requested = 2;
+    SolanaPendingTransaction mint_edition_drop_signing_requested = 3;
     SolanaPendingTransaction transfer_asset_signing_requested = 4;
-    SolanaPendingTransaction retry_create_drop_signing_requested = 5;
-    SolanaPendingTransaction retry_mint_drop_signing_requested = 6;
-    SolanaCompletedMintTransaction create_drop_submitted = 7;
-    SolanaCompletedUpdateTransaction update_drop_submitted = 8;
-    SolanaCompletedMintTransaction mint_drop_submitted = 9;
+    SolanaPendingTransaction retry_create_edition_drop_signing_requested = 5;
+    SolanaPendingTransaction retry_mint_edition_drop_signing_requested = 6;
+    SolanaCompletedMintTransaction create_edition_drop_submitted = 7;
+    SolanaCompletedUpdateTransaction update_edition_drop_submitted = 8;
+    SolanaCompletedMintTransaction mint_edition_drop_submitted = 9;
     SolanaCompletedTransferTransaction transfer_asset_submitted = 10;
-    SolanaCompletedMintTransaction retry_create_drop_submitted = 11;
-    SolanaCompletedMintTransaction retry_mint_drop_submitted = 12;
-    SolanaFailedTransaction create_drop_failed = 13;
-    SolanaFailedTransaction update_drop_failed = 14;
-    SolanaFailedTransaction mint_drop_failed = 15;
+    SolanaCompletedMintTransaction retry_create_edition_drop_submitted = 11;
+    SolanaCompletedMintTransaction retry_mint_edition_drop_submitted = 12;
+    SolanaFailedTransaction create_edition_drop_failed = 13;
+    SolanaFailedTransaction update_edition_drop_failed = 14;
+    SolanaFailedTransaction mint_edition_drop_failed = 15;
     SolanaFailedTransaction transfer_asset_failed = 16;
-    SolanaFailedTransaction retry_create_drop_failed = 17;
-    SolanaFailedTransaction retry_mint_drop_failed = 18;
+    SolanaFailedTransaction retry_create_edition_drop_failed = 17;
+    SolanaFailedTransaction retry_mint_edition_drop_failed = 18;
     MintOwnershipUpdate update_mint_owner = 19;
     SolanaPendingTransaction create_collection_signing_requested = 20;
     SolanaCompletedMintTransaction create_collection_submitted = 21;
@@ -141,5 +133,20 @@ message SolanaNftEvents {
     SolanaPendingTransaction switch_mint_collection_signing_requested = 43;
     SolanaFailedTransaction switch_mint_collection_failed = 44;
     SolanaCompletedUpdateTransaction switch_mint_collection_submitted = 45;
+    SolanaPendingTransaction create_open_drop_signing_requested = 46;
+    SolanaPendingTransaction update_open_drop_signing_requested = 47;
+    SolanaPendingTransaction mint_open_drop_signing_requested = 48;
+    SolanaPendingTransaction retry_create_open_drop_signing_requested = 49;
+    SolanaPendingTransaction retry_mint_open_drop_signing_requested = 50;
+    SolanaCompletedMintTransaction create_open_drop_submitted = 51;
+    SolanaCompletedUpdateTransaction update_open_drop_submitted = 52;
+    SolanaCompletedMintTransaction mint_open_drop_submitted = 53;
+    SolanaCompletedMintTransaction retry_create_open_drop_submitted = 54;
+    SolanaCompletedMintTransaction retry_mint_open_drop_submitted = 55;
+    SolanaFailedTransaction create_open_drop_failed = 56;
+    SolanaFailedTransaction update_open_drop_failed = 57;
+    SolanaFailedTransaction mint_open_drop_failed = 58;
+    SolanaFailedTransaction retry_create_open_drop_failed = 59;
+    SolanaFailedTransaction retry_mint_open_drop_failed = 60;
   }
 }
