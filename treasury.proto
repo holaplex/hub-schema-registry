@@ -124,11 +124,11 @@ message TreasuryEvents {
     MintTransfered mint_transfered = 10;
     DropMinted mint_retried = 11;
     DropCreated drop_retried = 12;
-    SolanaTransactionResult solana_create_drop_signed = 13;
-    SolanaTransactionResult solana_retry_create_drop_signed = 14;
-    SolanaTransactionResult solana_update_drop_signed = 15;
-    SolanaTransactionResult solana_mint_drop_signed = 16;
-    SolanaTransactionResult solana_retry_mint_drop_signed = 17;
+    SolanaTransactionResult solana_create_edition_drop_signed = 13;
+    SolanaTransactionResult solana_retry_create_edition_drop_signed = 14;
+    SolanaTransactionResult solana_update_edition_drop_signed = 15;
+    SolanaTransactionResult solana_mint_edition_drop_signed = 16;
+    SolanaTransactionResult solana_retry_mint_edition_drop_signed = 17;
     SolanaTransactionResult solana_transfer_asset_signed = 18;
     PolygonTransactionResult polygon_create_drop_txn_submitted = 19;
     PolygonPermitHashSignature polygon_permit_transfer_token_hash_signed = 20;
@@ -145,5 +145,10 @@ message TreasuryEvents {
     SolanaTransactionResult solana_update_collection_mint_signed = 31;
     SolanaTransactionResult solana_retry_update_collection_mint_signed = 32;
     SolanaTransactionResult solana_switch_mint_collection_signed = 33;
+    SolanaTransactionResult solana_create_open_drop_signed = 34;
+    SolanaTransactionResult solana_retry_create_open_drop_signed = 35;
+    SolanaTransactionResult solana_update_open_drop_signed = 36;
+    SolanaTransactionResult solana_mint_open_drop_signed = 37;
+    SolanaTransactionResult solana_retry_mint_open_drop_signed = 38;
   }
 }
