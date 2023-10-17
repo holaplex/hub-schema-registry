@@ -209,6 +209,18 @@ message SwitchCollectionPayload {
   string collection_id = 2;
 }
 
+message MintOpenDropTransaction {
+  string recipient_address = 1;
+  MetaplexMetadata metadata = 2;
+  string mint_id = 3;
+}
+
+message SolanaMintOpenDropBatchedPayload {
+  string collection_id = 1;
+  bool compressed = 2;
+  repeated MintOpenDropTransaction mint_open_drop_transactions = 3;
+}
+
 message NftEvents {
   oneof event {
     DropTransaction create_drop = 4;
@@ -248,5 +260,6 @@ message NftEvents {
     MetaplexMasterEditionTransaction solana_update_open_drop = 47;
     MintMetaplexMetadataTransaction solana_mint_open_drop = 48;
     MintMetaplexMetadataTransaction solana_retry_mint_open_drop = 49;
+    SolanaMintOpenDropBatchedPayload solana_mint_open_drop_batched = 50;
   }
 }

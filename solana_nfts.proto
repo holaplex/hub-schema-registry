@@ -86,6 +86,17 @@ message SolanaMintPayload {
   Metadata metadata = 10;
 }
 
+message SolanaMintPendingTransactions {
+  repeated string signers_pubkeys = 1;
+  repeated SolanaMintTransaction mint_transactions = 2;
+}
+
+message SolanaMintTransaction {
+  bytes serialized_message = 1;
+  string mint_id = 2;
+  optional string signer_signature = 3;
+}
+
 message SolanaNftEvents {
   oneof event {
     SolanaPendingTransaction create_edition_drop_signing_requested = 1;
@@ -148,5 +159,6 @@ message SolanaNftEvents {
     SolanaFailedTransaction mint_open_drop_failed = 58;
     SolanaFailedTransaction retry_create_open_drop_failed = 59;
     SolanaFailedTransaction retry_mint_open_drop_failed = 60;
+    SolanaMintPendingTransactions mint_open_drop_batched_signing_requested = 61;
   }
 }
